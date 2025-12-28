@@ -9,11 +9,16 @@ import SwiftUI
 
 struct DayView: View {
     let day: Int
+    let viewModel: DayViewModel
     var body: some View {
-        Text("Day \(day)")
+        VStack {
+            Text("Day \(day)")
+            Text("Test Answer: \(viewModel.getTestAnswer())")
+            Text("Real Answer: \(viewModel.getAnswer())")
+        }
     }
 }
 
 #Preview {
-    DayView(day: 1)
+    DayView(day: 1, viewModel: DayOneViewModel())
 }
